@@ -11,11 +11,15 @@ class Pessoa:
 if __name__ == '__main__':
     pedro = Pessoa(nome='Pedro', idade=6)
     carol = Pessoa(nome='Carol', idade=35)
-    rafael1 = Pessoa(pedro, carol, nome='Rafael', idade=37)
+    rafael = Pessoa(pedro, carol, nome='Rafael', idade=37)
     print(Pessoa.cumprimentar(pedro))
     print(id(pedro))
     print(pedro.cumprimentar())
     print(pedro.nome)
     print(pedro.idade)
-    for filho in rafael1.filhos:
-        print(f'{rafael1.nome} é o pai do {filho.nome}.')
+    for filho in rafael.filhos:
+        print(f'{rafael.nome} é o pai do {filho.nome}.')
+    rafael.sobrenome = 'Coelho'
+    del rafael.filhos
+    print(rafael.__dict__)
+    print(pedro.__dict__)
